@@ -3,11 +3,16 @@
 这是一个基于大数据技术开发的计算机岗位数据分析系统，旨在通过分布式计算和数据库技术分析招聘数据。本文档提供了代码平台搭建指南、大数据服务的启动与停止命令，以及服务器数据库配置说明。
 
 ## 项目概述
-- **名称**：计算机岗位数据分析系统
-- **技术栈**：Hadoop、Yarn、Hive、Spark、Zookeeper、MySQL
-- **功能**：分析招聘数据，提供可视化结果和推荐功能
+- **名称**：计算机岗位数据分析系统  
+- **技术栈**：Hadoop、Yarn、Hive、Spark、Zookeeper、MySQL  
+- **功能**：分析招聘数据，提供可视化结果和推荐功能  
 
 ## 代码平台搭建
+
+### 虚拟机IP
+  node1: 192.168.88.161
+  node2: 192.168.88.162
+  node3: 192.168.88.163
 
 ### 大数据服务启动与停止命令
 
@@ -33,5 +38,4 @@
   ```bash
   cd /export/server/spark      sbin/start-all.sh   sbin/stop-all.sh
   sbin/start-thriftserver.sh --hiveconf hive.server2.thrift.port=10000 --hiveconf hive.server2.thrift.bind.host=node1 --master local[*]
-
-可在node2上执行sbin/start-master.sh,防止唯一master被杀死
+  可在node2上执行sbin/start-master.sh,防止唯一master被杀死
